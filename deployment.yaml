@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linkedin-clone
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: linkedin-clone
+  template: 
+    metadata:
+      labels: 
+        app: linkedin-clone
+    spec:
+      containers:
+      - name: linkedin-clone
+        image: us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone@sha256:ea3c32a0c1b7358752ef30299317734403a3a3b0c365bea6eb288732d47595d9
+        ports: 
+        - containerPort: 8080
+      imagePullSecrets:
+       - name: regcred
