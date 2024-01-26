@@ -1,11 +1,11 @@
 From node:14-alpine as build
 WORKDIR /app
-COPY package*.json ./
+COPY package*.json ./client/
 RUN npm install
 COPY . .
 RUN npm run build
 
-FROM node
+FROM node:14-alpine
 WORKDIR /app
 COPY --from=build /app/build /app
 RUN npm i -g serve
