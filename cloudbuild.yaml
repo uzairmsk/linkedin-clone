@@ -14,7 +14,8 @@ steps:
     - '-c'
     - | 
         docker images
-
+options:
+  logging: CLOUD_LOGGING_ONLY
 
     # docker build -t us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone:latest .
 
