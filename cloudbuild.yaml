@@ -4,7 +4,7 @@ steps:
     args:
       - '-c'
       - | 
-          git clone https://github.com/uzairmsk/linkedin-clone.git
+          git clone https://github.com/uzairmsk/linkedin-clone
           git branch master 
           ls 
 
