@@ -16,6 +16,7 @@ steps:
     - | 
         docker images
         ls
+        pwd
 options:
   logging: CLOUD_LOGGING_ONLY
 
