@@ -1,2 +1,38 @@
 /node_modules
 /client/node_modules
+
+// pipeline {
+//     agent any
+//     stages {
+//         stage('Initialize') {
+//             steps {
+//                 sh '''
+//                     gcloud auth configure-docker us-central1-docker.pkg.dev
+// 	        	'''
+//             }
+//         }
+//         stage('Clone') {
+//             steps {
+//                 sh '''
+// 		             	git clone https://github.com/uzairmsk/linkedin-clone.git
+// 	            	'''
+//             }
+//         }
+//     	stage('Build') {
+//                 steps {
+//                     sh '''
+//     		        	cd linkedin-clone
+//     		        	git checkout master
+//     			        docker build -t us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone .
+//     			        docker push us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone:latest
+//     			        docker images
+//     		           '''
+//                 }
+//             }
+//         }
+//     post { 
+//         always { 
+//             cleanWs()
+//         }
+//     }
+// }
