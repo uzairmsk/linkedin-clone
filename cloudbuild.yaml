@@ -5,15 +5,17 @@ steps:
       - '-c'
       - | 
           git clone https://github.com/uzairmsk/linkedin-clone
-          git branch master 
+          git checkout master 
           ls 
 
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
     args:
     - '-c'
     - | 
         docker images
+        ls
 options:
   logging: CLOUD_LOGGING_ONLY
 
