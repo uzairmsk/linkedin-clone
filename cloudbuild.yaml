@@ -14,6 +14,7 @@ steps:
     args:
     - '-c'
     - | 
+        docker buildx create --use
         docker buildx build -t us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone:latest \
         --cache-to type=registry,ref=us-central1-docker.pkg.dev/angular-land-406809/docker-cache,mode=max \
         --cache-from type=registry,ref=us-central1-docker.pkg.dev/angular-land-406809/linkedin/linkedin-clone:latest .
